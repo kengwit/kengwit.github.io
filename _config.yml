@@ -84,7 +84,7 @@ author:
   bio              : "Engineer"
   location         : "Los Angeles, CA"
   employer         :
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : 
   email            : "kengwit@gmail.com"
   uri              :
   bitbucket        :
@@ -98,7 +98,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "linkedin.com/in/kengwit"
   orcid            : #"http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
