@@ -17,10 +17,13 @@ Education
 
 Work experience
 ======
-* Senior Staff II
+* 2015 - present: Senior Staff II
   * Engineering Mechanics Division, Simpson Gumpertz & Heger Inc, Los Angeles, CA
   
-* Staff II
+* 2015: Postdoc
+  * Mechanical and Civil Engineering, California Institute of Technology, Pasadena, CA
+  
+* 2004 - 2010: Staff II
   * Engineering Mechanics Division, Simpson Gumpertz & Heger Inc, Waltham, MA
   
 Skills
