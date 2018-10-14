@@ -12,8 +12,11 @@ redirect_from:
 Education
 ======
 * Ph.D in Applied Mechanics, California Institute of Technology, 2014
-<!---* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014-->
+
+<!---
+* B.S. in GitHub, GitHub University, 2012
+* M.S. in Jekyll, GitHub University, 2014
+-->
 
 Work experience
 ======
@@ -38,7 +41,8 @@ Skills
   * Plaxis
   * FLAC
 
-<!---Publications
+<!---
+Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
