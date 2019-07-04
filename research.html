@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Roman Poya</title>
+        <!-- link to main stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+        <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+        <script type="text/javascript">LatexIT.add('p',true);</script>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <!-- <li><a href="/about">About</a></li> -->
+                <li><a href="/research">Research</a></li>
+                <li><a href="/publications">Publications</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="blurb">
+            <h2>Novel computational techniques for coupled electro-magneto-mechanics:</h2>
+                <p>I carry out research on developing novel computational techniques for coupled electro-magneto-mechanical problems. The point of departure for most of these problems is an energy functional for the coupled system whose consistent linearisation yield a variational principle. I focus mainly on geometrically linearised electromechanical systems with nonlinear electric polarisation characteristics which are still variationally consistent. To achieve this, starting from an objective and convex multi-variable nonlinear electroelastic energy is always desirable. The energy is then perturbed in the vicinity of stress free (undeformed) configuration, in order to particularise its truely nonlinear variational principle into a linearised form while maintaining all the favourable features from the nonlinear constitutive model. For a short illustration, consider the potential energy of a simple electroelastic system</p>
+                <!---->
+                <div lang="latex">\Pi(\boldsymbol{x},\boldsymbol{D}_0) = \int_\Omega \Psi(\boldsymbol{F},\boldsymbol{H},J,\boldsymbol{D}_0) dV,</div>
+                <p>where $\Psi$ is a convex multi-variable internal energy for the coupled electroelastic system, $\boldsymbol{x}$ is the position vector of the material point, $\boldsymbol{F}$ is the deformation gradient tensor, $\boldsymbol{H}$ is the cofactor of the deformation gradient tensor, $J$ is the determinant of the deformation gradient tensor, $\boldsymbol{D}_0$ is the electric displacement vector and $f(J)$ is typically a convex function in $J$, such as the internal energy can be of the form </p>
+                <div lang="latex">\noindent\Psi(\boldsymbol{F},\boldsymbol{H},J,\boldsymbol{D}_0) = \alpha\boldsymbol{F}:\boldsymbol{F} + \beta\boldsymbol{H}:\boldsymbol{H} + f(J) + \frac{1}{2\mu_1}\boldsymbol{D}_0\cdot\boldsymbol{D}_0 + \frac{1}{2\mu_2 J}\boldsymbol{FD}_0\cdot\boldsymbol{FD}_0,</div>
+                <p>where $\alpha$, $\beta$ and $\mu$ are material constants with positive values. The mechanically linearised potential energy after applying a perturbation in the form of Taylor series expansion can now be written as</p>
+                <div lang="latex">\Pi_{\text{lin}}(\boldsymbol{x},\boldsymbol{D}_0) = \int_\Omega \bigg(\Psi(\boldsymbol{F},\boldsymbol{H},J,\boldsymbol{D}_0) + D\Psi(\boldsymbol{F},\boldsymbol{H},J,\boldsymbol{D}_0)[\delta\boldsymbol{u}] + \frac{1}{2}D^2\Psi(\boldsymbol{F},\boldsymbol{H},J,\boldsymbol{D}_0)[\delta\boldsymbol{u};\Delta\boldsymbol{u}] \bigg) dV,</div>
+                <!---->
+                <p>$\Pi_{\text{lin}}$ is a new energy functional which is geometrically linearised but electrostatically still nonlinear. Further linearisation of this energy leads an electromechanical variational formulation which can be solved using a staggered scheme. The variational form is then discretised using suitable finite element spaces. In this context high order finite elements which can capture the exact geometry and result in higher accuracy can be employed. For mathematical and implemenation details the reader can refer to the papers by Gil and Ortigosa and Poya <em>et. al.</em></p>
+                <img src="/images/coupled_problems/hand.png" alt="hand" style="max-width:48%;">
+                <img src="/images/coupled_problems/hand_mesh.png" alt="handmesh" style="max-width:48%;">
+                <p>This work is mainly focused on numerical simulations of actuators, energy harversters and soft tissues such as artifical muscles (shown above). The following figures show the formation and nucleation of wrinkles and creases in a soft dielectric film
+                <figure align="center">
+                    <!-- <img src="/images/coupled_problems/twisting_cylinder.gif" style="max-width:100%;"> -->
+                    <img src="/images/coupled_problems/tmp/Disc20_100.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_200.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_300.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_400.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_500.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_600.png" style="max-width:15%;">
+                    <!--  -->
+                    <img src="/images/coupled_problems/tmp/Disc20_620.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_640.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_660.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_680.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_699.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_700.png" style="max-width:15%;">
+                    <!--  -->
+                    <img src="/images/coupled_problems/tmp/Disc20_710.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_720.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_730.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_740.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_750.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_760.png" style="max-width:15%;">
+                    <!--  -->
+                    <img src="/images/coupled_problems/tmp/Disc20_765.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_770.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_775.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_780.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_785.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_790.png" style="max-width:15%;">
+                    <!--  -->
+                    <img src="/images/coupled_problems/tmp/Disc20_792.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_794.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_796.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_798.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_799.png" style="max-width:15%;">
+                    <img src="/images/coupled_problems/tmp/Disc20_800.png" style="max-width:15%;">
+                    <figcaption align="center">Wrinkling in soft dielectric film</figcaption>
+                </figure>
+                <p>Further details about this project can be found in the open-source <a href="https://github.com/romeric/florence">Florence</a> project.</a></p>
+                <ul>
+                    <li>Roman Poya, Rogelio Ortigosa, Antonio J. Gil, Ruben Sevilla, Javier Bonet, Wolfgang A. Wall, A curvilinear high order finite element framework for electromechanics: from linearised electro-elasticity to massively deformable dielectric elastomers, <em>Computer Methods in Applied Mechanics and Engineering</em>, <a href="http://www.sciencedirect.com/science/article/pii/S0045782517306503">Volume 329, 1 Feb 2018, Pages 75–117</a></li>
+                    <li>A. J. Gil and R. Ortigosa, A new framework for large strain electromechanics based on convex multi-variable strain energies: Variational formulation and material characterisation, <em>Computer Methods in Applied Mechanics and Engineering</em>, <a href="http://www.sciencedirect.com/science/article/pii/S0045782515004168">Volume 302, 15 April 2016, Pages 293–328</a></li>
+                    <li>R. Ortigosa and A. J. Gil, A new framework for large strain electromechanics based on convex multi-variable strain energies: Finite Element discretisation and computational implementation, <em>Computer Methods in Applied Mechanics and Engineering</em>, <a href="http://www.sciencedirect.com/science/article/pii/S0045782515004168">Volume 302, 15 April 2016, Pages 329–360</a></li>
+                    <li>R. Ortigosa and A. J. Gil, A new framework for large strain electromechanics based on convex multi-variable strain energies: Conservation laws, hyperbolicity and extension to electro-magneto-mechanics, <em>Computer Methods in Applied Mechanics and Engineering</em>, <a href="http://www.sciencedirect.com/science/article/pii/S0045782515004168">Volume 309, 1 September 2016, Pages 202–242</a></li>
+                    <li>R. Poya and A. J. Gil and P. D. Ledger, A computational framework for the analysis of linear piezoelectric beams using <em>hp</em>-finite elements, <em>Computers and Structures</em>, <a href="http://www.sciencedirect.com/science/article/pii/S0045794915000218">Volume 152, May 2015, Pages 155–172</a></li>
+                </ul>
+                <!---->
+                <hr>
+                <h2>High Order Curvilinear Mesh Generation:</h2>
+                <p>A core part of my research work focuses on implementing novel algorithms for generating structured and unstructured meshes for NURBS conforming high order finite element analysis. In particular, I work on various solid mechanics based analogies for a posteriori mesh generation.</p>
+                <!--img src="/images/mesh_generation/F6Iso_2.png" alt="F6IsotropicMesh" style="width:1200px;height:450px;">
+                <img src="/images/mesh_generation/f6BL_2.png" alt="F6AnisotropicMesh" style="width:680px;height:400px;">
+                <img src="/images/mesh_generation/Mech3D_1.png" alt="MechanicalComponent3D" style="width:490px;height:400px;"-->
+                <img src="/images/mesh_generation/F6Iso_2.png" alt="F6IsotropicMesh" style="max-width:100%;">
+                <img src="/images/mesh_generation/f6BL_2.png" alt="F6AnisotropicMesh" style="max-width:48%;">
+                <img src="/images/mesh_generation/Mech3D_1.png" alt="MechanicalComponent3D" style="max-width:38%;">
+                <!---->
+                <p>Further details about this project can be found in the <b>PostMesh</b> official <a href="https://github.com/romeric/PostMesh">GitHub repository</a>. For mathematical and computational details the reader can refer to the following research papers.</p>
+                <ul>
+                  <li>R. Poya, R. Sevilla, A. J. Gil, A unified approach for a posteriori high-order curved mesh generation using solid mechanics, <i>Computational Mechanics</i>, <a href="http://link.springer.com/article/10.1007/s00466-016-1302-2">Vol 58, Issue 3, pp 457-490, (2016)</a></li>
+                  <li>R. Poya, R. Sevilla, A. J. Gil, A consistently linearised solid mechanics based mesh deformation technique for high order curved elements, <i>European Congress on Computational Methods in Applied
+                  Sciences and Engineering (ECCOMAS)</i>, <a href="https://www.eccomas2016.org/proceedings/pdf/10925.pdf">Crete Island, Greece, 5-10 June 2016</a></li>
+                </ul>
+                <!---->
+                <hr>
+                <h2>High Performance Data Parallel Algorithms for Solving Multi-Physics Problems:</h2>
+                <p>The backbone of the aforementioned projects is based on Fastor, a data parallel tensor contraction framework based on C++11 (and beyond) with some fundamentally novel metaproramming features. In particular, Fastor combines powerful SIMD implementations of BLAS type routines for high order tensors with a domain-aware expression template engine which performs operation minimisation at compile time. This facilitates extremely fast evaluation of finite element matrices and local assembly procedures. The following figures present the run-time performance of operation minimisation for three-tensor-network over the classical single tensor expression evaluation for different CPU caches.</p>
+                <figure>
+                    <img src="/images/hpc/05l1.png" style="max-width:24%;">
+                    <img src="/images/hpc/05l2.png" style="max-width:24%;">
+                    <img src="/images/hpc/05l3.png" style="max-width:24%;">
+                    <img src="/images/hpc/4l3.png" style="max-width:24%;">
+                    <figcaption align="center">Performance of depth-first search and single expression evaluation schemes for different CPU caches (left to right: L1, L2, L3, RAM). X-axis indicates the reduction in FLOP by performing depth-first search</figcaption>
+                </figure>
+                <p>For results regarding SIMD benchmarks the reader can refer to <a href="https://github.com/romeric/Fastor">Fastor's repository</a>.</p>
+                <ul>
+                  <li>Roman Poya, Antonio J. Gil, Rogelio Ortigosa, A high performance data parallel tensor contraction framework: Application to coupled electro-mechanics, <i>Computer Physics Communications</i>, <a href="http://www.sciencedirect.com/science/article/pii/S0010465517300681">Vol 216, pp 325-352, (2017)</a></li>
+                </ul>
+                <hr>
+                <h2>Fast Explicit Dynamics Solver for Contact and Nonlinear Multiphysics Problems:</h2>
+                <p>The most recent version of <a href="https://github.com/romeric/florence">Florence</a> has the capability to perform explicit dynamic analysis for mechanical and coupled electromechanical problems with explicit node-to-surface penalty contact algorithm. The following figures show the distribution of hydrostatic pressure during crash analysis. Simulation is performed for 10 second real time using 100000 time steps on a mesh with 263976 degrees of freedom corresponding to (<i>p</i>=2) tetrahedra.</p>
+                <figure>
+                    <img src="/images/explicit_dynamics/CarCrash_00.png" style="max-width:44%;">
+                    <img src="/images/explicit_dynamics/CarCrash_01.png" style="max-width:44%;">
+                    <img src="/images/explicit_dynamics/CarCrash_02.png" style="max-width:44%;">
+                    <img src="/images/explicit_dynamics/CarCrash_03.png" style="max-width:44%;">
+                    <figcaption align="center">Crash analysis of an Audi TT using explicit dynamics algorithm in florence</figcaption>
+                </figure>
+            </div><!-- /.blurb -->
+        </div><!-- /.container -->
+        <footer>
+            <ul>
+                <li><a href="https://uk.linkedin.com/pub/roman-poya/1a/4a0/236">
+                <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="140" height="29" border="0" alt="View Roman Poya's profile on LinkedIn"> </a></li>
+                <li><a class="github-button" href="https://github.com/romeric" data-style="mega" data-count-href="/romeric/followers" data-count-api="/users/romeric#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @romeric on GitHub">@romeric</a></li>
+                <li><a class="g-follow" data-annotation="bubble" data-height="24" data-href="//plus.google.com/u/0/103416496926202712265" data-rel="author"></a></li>
+                <li><iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fromeric-poyazh&color=orange_transparent&size=24" style="width: 24px; height: 24px;"></iframe></li>
+            </ul>
+        </footer>
+    </body>
+</html>
