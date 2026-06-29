@@ -11,8 +11,7 @@ related_publications: false
 A Python finite element (FE) code is developed to illustrate the following:
 - FE code architecture using object-oriented programming concepts
 - Nonlinear solution procedures
-- Nonlinear constitutive models
-- Machine learning ideas for constitutive modeling, for e.g., neural networks
+- Constitutive models
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
