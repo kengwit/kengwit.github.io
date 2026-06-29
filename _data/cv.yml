@@ -38,6 +38,7 @@ cv:
 
       - institution: North Carolina State University
         location: Raleigh, NC
+        url: https://www.ncsu.edu/
         area: Civil Engineering
         studyType: MS
         start_date: 2001
@@ -48,6 +49,7 @@ cv:
 
       - institution: University of Wales
         location: Swansea, UK
+        url: https://www.swansea.ac.uk/
         area: Civil Engineering
         studyType: BEng
         start_date: 1996
