@@ -3,7 +3,7 @@ layout: page
 title: Softening Gradient Plasticity
 description: 
 img: assets/img/mesh.jpg
-importance: 1
+importance: 3
 category: fun
 related_publications: false
 ---
