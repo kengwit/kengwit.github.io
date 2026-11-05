@@ -1,11 +1,4 @@
 ---
-title: |
-  Tensor Derivation of the Geodesic\
-  from Los Angeles to Tokyo on a Spherical Earth
----
-
----
-
 layout: page
 title: Tensor Derivation of the Geodesic from Los Angeles to Tokyo on a Spherical Earth
 description:
@@ -13,7 +6,6 @@ img: assets/img/sympy_geodesic_earth_flat.png
 importance: 1
 category: fun
 related_publications: false
-
 ---
 
 <!-- Row 1 -->
