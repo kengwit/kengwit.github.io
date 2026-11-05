@@ -47,13 +47,15 @@ jobs:
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.5"
+          # kwlim ruby-version: "3.3.5"
+          ruby-version: "3.3"
           bundler-cache: true
 
       - name: Setup Node 🧰
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # kwlim node-version: "20"
+          node-version: "24"
           cache: "npm"
 
       - name: Install JS deps 📦
