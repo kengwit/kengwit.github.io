@@ -84,24 +84,24 @@ cv:
         location: Pasadena, CA
         start_date: 2014
         end_date: 2015
-        highlights: 
-         - Computational methods for fragmentation and comminution of particulate media. 
-         - Abaqus UEL/UMAT in C++ and Fortran, implementation of object-oriented nonlinear finite elements for hyperelasticity and elasto-plasticity.
+        highlights:
+          - Computational methods for fragmentation and comminution of particulate media.
+          - Abaqus UEL/UMAT in C++ and Fortran, implementation of object-oriented nonlinear finite elements for hyperelasticity and elasto-plasticity.
 
       - company: Simpson Gumpertz & Heger
-        position: Staff I and II 
+        position: Staff I and II
         location: Waltham, MA
         start_date: 2004
         end_date: 2010
         # summary: Soil-structure interaction and finite element analyses of energy-related facilities - weapons-grade plutonium conversion and vitrification (for peaceful nuclear fuel), radioactive waste treatment units, power generation units. Design, field investigation, risk analysis, and determination of repair priorities of pipelines. Modeling components for rail vehicle crash-worthiness protection. Structural field support and testing, failure investigations.
-        highlights: 
-         - Soil-structure interaction and finite element analyses of energy-related facilities -  weapons-grade plutonium conversion and vitrification (for peaceful nuclear fuel), radioactive waste treatment units, power generation units. 
-         - Design, field investigation, risk analysis, and determination of repair priorities of pipelines. 
-         - Modeling components for rail vehicle crash-worthiness protection. Structural field support and testing, failure investigations.
+        highlights:
+          - Soil-structure interaction and finite element analyses of energy-related facilities -  weapons-grade plutonium conversion and vitrification (for peaceful nuclear fuel), radioactive waste treatment units, power generation units.
+          - Design, field investigation, risk analysis, and determination of repair priorities of pipelines.
+          - Modeling components for rail vehicle crash-worthiness protection. Structural field support and testing, failure investigations.
         # highlights:
         #  - Relativity
         #  - Description 2.
-      
+
       # - company: Kaiser Wilhelm Institute for Physics
       #  position: Director
       #  location: Berlin, Germany
@@ -192,7 +192,7 @@ cv:
 
       - name: Mandarin
         summary: "Elementary proficiency"
-    
+
     #Certificates:
     #  - name: Machine Learning
     #    date: 2018-01-01

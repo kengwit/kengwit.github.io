@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Python Finite Element Code
-description: 
+description:
 img: assets/img/python_fem.png
 importance: 2
 category: fun
@@ -9,6 +9,7 @@ related_publications: false
 ---
 
 A Python finite element (FE) code is developed to illustrate the following:
+
 - FE code architecture using object-oriented programming concepts
 - Nonlinear solution procedures
 - Constitutive models
@@ -38,8 +39,6 @@ You describe how you toiled, sweated, _bled_ for your project, and then... you r
 <div class="caption">
     You can also have artistically styled 2/3 + 1/3 images, like these.
 </div>
-
-
 
 Every project has a beautiful feature showcase pagei.
 It's easy to include images in a flexible 3-column grid format.
@@ -86,7 +85,7 @@ Here's the code for the last row of images above:
   </div>
 </div>
 ```
-{% endraw %}
 
+{% endraw %}
 
 {% endcomment %}

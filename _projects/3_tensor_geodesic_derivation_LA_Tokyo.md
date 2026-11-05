@@ -5,16 +5,16 @@ title: |
 ---
 
 ---
+
 layout: page
 title: Tensor Derivation of the Geodesic from Los Angeles to Tokyo on a Spherical Earth
-description: 
+description:
 img: assets/img/sympy_geodesic_earth_flat.png
 importance: 1
 category: fun
 related_publications: false
+
 ---
-
-
 
 <!-- Row 1 -->
 <div class="row">
@@ -38,7 +38,6 @@ Geodesic on flattened earth.
 
 <iframe src="{{ '/assets/html/interactive_tensor_geodesic_globe.html' | relative_url }}" width="100%" height="500px" frameborder="0"></iframe>
 
-
 # Purpose
 
 This note derives the geodesic equations used by the accompanying SymPy
@@ -51,18 +50,21 @@ Angeles to Tokyo.
 
 Use $$x^1=\phi,\qquad x^2=\lambda,$$ where $\phi$ is latitude and
 $\lambda$ is longitude. A sphere of radius $R$ is parametrized by
-$$\mathbf r(\phi,\lambda)
+
+$$
+\mathbf r(\phi,\lambda)
 =
 R\begin{pmatrix}
 \cos\phi\cos\lambda\\
 \cos\phi\sin\lambda\\
 \sin\phi
-\end{pmatrix}.$$
+\end{pmatrix}.
+$$
 
-The coordinate basis vectors are $$\mathbf e_\phi
-=
-\frac{\partial\mathbf r}{\partial\phi}
-=
+# The coordinate basis vectors are $$\mathbf e\_\phi
+
+# \frac{\partial\mathbf r}{\partial\phi}
+
 R\begin{pmatrix}
 -\sin\phi\cos\lambda\\
 -\sin\phi\sin\lambda\\
@@ -125,7 +127,9 @@ The Christoffel symbols of the second kind are $$\boxed{
 
 Only one metric component depends on the coordinates:
 $$g_{\lambda\lambda}=R^2\cos^2\phi.$$ Therefore,
-$$\partial_\phi g_{\lambda\lambda}
+
+$$
+\partial_\phi g_{\lambda\lambda}
 =-2R^2\sin\phi\cos\phi,$$ and all other metric derivatives vanish.
 
 ## Calculation of $\Gamma^\phi_{\lambda\lambda}$
@@ -139,13 +143,16 @@ gives $$\Gamma^\phi_{\lambda\lambda}
 \Gamma^\phi_{\lambda\lambda}
 =\sin\phi\cos\phi
 =\frac12\sin(2\phi).
-}$$
+}
+$$
 
 ## Calculation of $\Gamma^\lambda_{\phi\lambda}$
 
 Only $\ell=\lambda$ contributes: $$\Gamma^\lambda_{\phi\lambda}
 =\frac12g^{\lambda\lambda}\partial_\phi g_{\lambda\lambda}.$$ Therefore,
-$$\Gamma^\lambda_{\phi\lambda}
+
+$$
+\Gamma^\lambda_{\phi\lambda}
 =\frac12\frac{1}{R^2\cos^2\phi}
 \left(-2R^2\sin\phi\cos\phi\right),$$ which gives $$\boxed{
 \Gamma^\lambda_{\phi\lambda}=-\tan\phi.
@@ -153,7 +160,8 @@ $$\Gamma^\lambda_{\phi\lambda}
 \Gamma^\lambda_{\lambda\phi}
 =\Gamma^\lambda_{\phi\lambda}
 =-\tan\phi.
-}$$
+}
+$$
 
 Thus, the only nonzero Christoffel symbols are $$\boxed{
 \Gamma^\phi_{\lambda\lambda}=\sin\phi\cos\phi,
@@ -175,13 +183,16 @@ A geodesic satisfies $$\boxed{
 \frac{dx^i}{dt}
 \frac{dx^j}{dt}=0.
 }$$ Equivalently, $$\boxed{\nabla_{\dot\gamma}\dot\gamma=0.}$$ Here,
-$$\gamma(t)=
+
+$$
+\gamma(t)=
 \begin{pmatrix}
 \phi(t)\\
 \lambda(t)
 \end{pmatrix},
 \qquad
-\dot\gamma=\dot\phi\,\mathbf e_\phi+\dot\lambda\,\mathbf e_\lambda.$$
+\dot\gamma=\dot\phi\,\mathbf e_\phi+\dot\lambda\,\mathbf e_\lambda.
+$$
 
 ## Latitude Equation
 
@@ -208,7 +219,9 @@ For $k=\lambda$, $$\begin{aligned}
 &+\Gamma^\lambda_{\lambda\phi}\dot\lambda\dot\phi
 +\Gamma^\lambda_{\lambda\lambda}\dot\lambda^2=0.
 \end{aligned}$$ The only nonzero terms are the two mixed terms. Thus,
-$$\ddot\lambda
+
+$$
+\ddot\lambda
 -\tan\phi\,\dot\phi\dot\lambda
 -\tan\phi\,\dot\lambda\dot\phi=0,$$ so $$\boxed{
 \ddot\lambda-2\tan\phi\,\dot\phi\dot\lambda=0
@@ -302,7 +315,8 @@ g_{ij}
 \end{cases}$$ $$\Longrightarrow\quad
 \text{solve the Los Angeles-to-Tokyo boundary conditions}
 \quad\Longrightarrow\quad
-L\approx8815.473\ \mathrm{km}.$$
+L\approx8815.473\ \mathrm{km}.
+$$
 
 This demonstrates that the route is obtained from the metric tensor and
 its Levi--Civita connection rather than by directly inserting the known

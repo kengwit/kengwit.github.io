@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Softening Gradient Plasticity
-description: 
+description:
 img: assets/img/mesh.jpg
 importance: 3
 category: fun
@@ -35,8 +35,6 @@ You describe how you toiled, sweated, _bled_ for your project, and then... you r
 <div class="caption">
     You can also have artistically styled 2/3 + 1/3 images, like these.
 </div>
-
-
 
 Every project has a beautiful feature showcase pagei.
 It's easy to include images in a flexible 3-column grid format.
@@ -83,7 +81,7 @@ Here's the code for the last row of images above:
   </div>
 </div>
 ```
-{% endraw %}
 
+{% endraw %}
 
 {% endcomment %}
