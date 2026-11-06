@@ -5,7 +5,7 @@ description:
 img: assets/img/sympy_geodesic_earth_flat.png
 importance: 1
 category: fun
-related_publications: false
+related_publications: true
 ---
 
 
@@ -14,7 +14,7 @@ related_publications: false
 
 # Purpose
 
-This note derives the geodesic equations used by the accompanying SymPy
+This note derives the geodesic equations used by the accompanying SymPy {% cite 10.7717/peerj-cs.103 %}
 and SciPy code. The derivation begins with the metric tensor of a
 sphere, computes the Christoffel symbols, forms the tensor geodesic
 equation, and then states the boundary-value problem for a path from Los
@@ -23,6 +23,7 @@ Angeles to Tokyo.
 # Coordinate System
 
 Use 
+
 $$
 x^1=\phi,\qquad x^2=\lambda
 $$ 
@@ -79,7 +80,8 @@ g_{\phi\lambda}=0,\qquad
 g_{\lambda\lambda}=R^2\cos^2\phi
 $$ 
 
-Thus, 
+Thus,
+
 $$
 \boxed{
 g_{ij}
@@ -101,11 +103,13 @@ $$
 
 This corresponds to the SymPy construction
 
+```
     metric = (
         R_symbol**2 * TensorProduct(dphi, dphi)
         + R_symbol**2 * cos(phi)**2
           * TensorProduct(dlam, dlam)
     )
+```
 
 The inverse metric is 
 
@@ -138,11 +142,13 @@ $$
 $$
 
 Only one metric component depends on the coordinates:
+
 $$
 g_{\lambda\lambda}=R^2\cos^2\phi
 $$ 
 
 Therefore,
+
 $$
 \partial_\phi g_{\lambda\lambda}
 =-2R^2\sin\phi\cos\phi
@@ -152,8 +158,7 @@ and all other metric derivatives vanish.
 
 ## Calculation of $\Gamma^\phi_{\lambda\lambda}$
 
-Set $k=\phi$ and $i=j=\lambda$. Since the metric is diagonal, only
-$\ell=\phi$ contributes: 
+Set $k=\phi$ and $i=j=\lambda$. Since the metric is diagonal, only $\ell=\phi$ contributes: 
 
 $$
 \Gamma^\phi_{\lambda\lambda}
@@ -161,6 +166,7 @@ $$
 $$ 
 
 Substitution gives 
+
 $$
 \Gamma^\phi_{\lambda\lambda}
 =-\frac12\frac1{R^2}
@@ -180,12 +186,14 @@ $$
 ## Calculation of $\Gamma^\lambda_{\phi\lambda}$
 
 Only $\ell=\lambda$ contributes: 
+
 $$
 \Gamma^\lambda_{\phi\lambda}
 =\frac12g^{\lambda\lambda}\partial_\phi g_{\lambda\lambda}
 $$ 
 
 Therefore,
+
 $$
 \Gamma^\lambda_{\phi\lambda}
 =\frac12\frac{1}{R^2\cos^2\phi}
@@ -193,6 +201,7 @@ $$
 $$ 
 
 which gives 
+
 $$
 \boxed{
 \Gamma^\lambda_{\phi\lambda}=-\tan\phi
@@ -200,6 +209,7 @@ $$
 $$ 
 
 By symmetry of the Levi--Civita connection, 
+
 $$\boxed{
 \Gamma^\lambda_{\lambda\phi}
 =\Gamma^\lambda_{\phi\lambda}
@@ -208,6 +218,7 @@ $$\boxed{
 $$
 
 Thus, the only nonzero Christoffel symbols are 
+
 $$
 \boxed{
 \Gamma^\phi_{\lambda\lambda}=\sin\phi\cos\phi,
@@ -220,11 +231,14 @@ $$
 
 In the code, SymPy obtains them from
 
+```
     Gamma = metric_to_Christoffel_2nd(metric)
+```
 
 # Tensor Geodesic Equation
 
 A geodesic satisfies 
+
 $$
 \boxed{
 \frac{d^2x^k}{dt^2}
@@ -235,11 +249,13 @@ $$
 $$ 
 
 Equivalently, 
+
 $$
 \boxed{\nabla_{\dot\gamma}\dot\gamma=0}
 $$ 
 
 Here,
+
 $$
 \gamma(t)=
 \begin{pmatrix}
@@ -253,6 +269,7 @@ $$
 ## Latitude Equation
 
 For $k=\phi$, the fully expanded equation is 
+
 $$
 \ddot\phi
 +\Gamma^\phi_{\phi\phi}\dot\phi^2
@@ -263,6 +280,7 @@ $$
 $$ 
 
 The first three Christoffel symbols vanish, so 
+
 $$
 \ddot\phi
 +\Gamma^\phi_{\lambda\lambda}\dot\lambda^2=0
@@ -286,7 +304,9 @@ $$
 
 This corresponds to
 
+```
     dy[2] = -gamma_phi_ll * lam_dot**2
+```
 
 ## Longitude Equation
 
@@ -327,13 +347,16 @@ $$
 
 This corresponds to
 
+```
     dy[3] = -2.0 * gamma_lam_pl * phi_dot * lam_dot
+```
 
 because $\Gamma^\lambda_{\phi\lambda}=-\tan\phi$.
 
 # First-Order System Used by the Numerical Solver
 
 Introduce 
+
 $$
 y_1=\phi,\qquad y_2=\lambda,\qquad
 y_3=\dot\phi,\qquad y_4=\dot\lambda
@@ -357,6 +380,7 @@ This is the system passed to `scipy.integrate.solve_bvp`.
 # Los Angeles-to-Tokyo Boundary-Value Problem
 
 Using city-center coordinates, 
+
 $$
 \begin{aligned}
 \phi_{\mathrm{LA}}&=34.0522^\circ,
@@ -367,6 +391,7 @@ $$
 $$ 
 
 For a continuous Pacific-going coordinate branch, Tokyo's longitude is unwrapped (subtract $360^\circ$ from Tokyo's longitude) as
+
 $$
 139.6917^\circ\equiv -220.3083^\circ
 $$ 
@@ -386,12 +411,14 @@ $$
 
 The corresponding code is
 
+```
     return np.array([
         ya[0] - phi_A,
         ya[1] - lam_A,
         yb[0] - phi_B,
         yb[1] - lam_B,
     ])
+```
 
 The initial direction is not prescribed. Instead, the boundary-value
 solver finds $\dot\phi(0)$ and $\dot\lambda(0)$ such that the geodesic
@@ -400,45 +427,55 @@ beginning in Los Angeles reaches Tokyo.
 # Distance Recovered from the Metric
 
 Once $\phi(t)$ and $\lambda(t)$ are known,
+
 $$
 ds^2=R^2d\phi^2+R^2\cos^2\phi\,d\lambda^2
 $$ 
 
 Dividing by $dt^2$ gives
+
 $$
 \left(\frac{ds}{dt}\right)^2
 =R^2\left(\dot\phi^2+\cos^2\phi\,\dot\lambda^2\right)
 $$ 
 
 Thus, 
+
 $$
 \boxed{
 \frac{ds}{dt}
 =R\sqrt{\dot\phi^2+\cos^2\phi\,\dot\lambda^2}
 }
 $$ 
+
 and the total length is 
+
 $$
 \boxed{
 L=R\int_0^1
 \sqrt{\dot\phi^2+\cos^2\phi\,\dot\lambda^2}\,dt
 }
 $$ 
+
 The implementation is
 
+```
     metric_speed = R_KM * np.sqrt(
         phi_dot**2
         + np.cos(phi_path)**2 * lam_dot**2
     )
 
     distance_km = np.trapz(metric_speed, tau_plot)
+```
 
 For the numerical solution, 
+
 $$
 \boxed{L\approx8815.473\ \mathrm{km}}
 $$
 
 The path reaches a maximum latitude of approximately
+
 $$
 \boxed{47.952^\circ\ \mathrm{N}}
 $$
@@ -446,6 +483,7 @@ $$
 # Calculation Chain
 
 The complete tensor-based calculation is 
+
 $$
 \mathbf r(\phi,\lambda)
 \quad\Longrightarrow\quad
