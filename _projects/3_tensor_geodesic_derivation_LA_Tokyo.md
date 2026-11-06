@@ -14,11 +14,8 @@ related_publications: true
 
 # Purpose
 
-This note derives the geodesic equations used by the accompanying SymPy {% cite 10.7717/peerj-cs.103 %}
-and SciPy code. The derivation begins with the metric tensor of a
-sphere, computes the Christoffel symbols, forms the tensor geodesic
-equation, and then states the boundary-value problem for a path from Los
-Angeles to Tokyo.
+This note derives the geodesic equations used by an accompanying SymPy {% cite 10.7717/peerj-cs.103 %} and SciPy code. The derivation begins with the metric tensor of a
+sphere, computes the Christoffel symbols, forms the tensor geodesic equation, and then states the boundary-value problem for a path from Los Angeles to Tokyo.
 
 # Coordinate System
 
