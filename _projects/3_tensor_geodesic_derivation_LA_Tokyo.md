@@ -8,25 +8,7 @@ category: fun
 related_publications: false
 ---
 
-<!-- Row 1 -->
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sympy_geodesic_earth_globe.png" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-Geodesic on earth globe.
-</div>
 
-<!-- Row 2 -->
-<div class="row mt-4"> <!-- Added mt-4 for a bit of spacing between rows -->
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sympy_geodesic_earth_flat.png" title="second example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-Geodesic on flattened earth.
-</div>
 
 <iframe src="{{ '/assets/html/interactive_tensor_geodesic_globe.html' | relative_url }}" width="100%" height="500px" frameborder="0"></iframe>
 
@@ -50,18 +32,23 @@ R\begin{pmatrix}
 \cos\phi\cos\lambda\\
 \cos\phi\sin\lambda\\
 \sin\phi
-\end{pmatrix}.
+\end{pmatrix}
 $$
 
-# The coordinate basis vectors are $$\mathbf e\_\phi
+The coordinate basis vectors are 
 
-# \frac{\partial\mathbf r}{\partial\phi}
-
+$$
+\mathbf e\_\phi = \frac{\partial\mathbf r}{\partial\phi}
+=
 R\begin{pmatrix}
 -\sin\phi\cos\lambda\\
 -\sin\phi\sin\lambda\\
 \cos\phi
-\end{pmatrix},$$ and $$\mathbf e_\lambda
+\end{pmatrix}
+$$ 
+and 
+
+$$\mathbf e_\lambda
 =
 \frac{\partial\mathbf r}{\partial\lambda}
 =
@@ -69,23 +56,44 @@ R\begin{pmatrix}
 -\cos\phi\sin\lambda\\
 \cos\phi\cos\lambda\\
 0
-\end{pmatrix}.$$
+\end{pmatrix}
+$$
 
 # Metric Tensor
 
-The metric components are $$g_{ij}=\mathbf e_i\cdot\mathbf e_j.$$
-Therefore, $$g_{\phi\phi}=R^2,\qquad
+The metric components are 
+
+$$
+g_{ij}=\mathbf e_i\cdot\mathbf e_j
+$$
+
+Therefore, 
+
+$$
+g_{\phi\phi}=R^2,\qquad
 g_{\phi\lambda}=0,\qquad
-g_{\lambda\lambda}=R^2\cos^2\phi.$$ Thus, $$\boxed{
+g_{\lambda\lambda}=R^2\cos^2\phi
+$$ 
+
+Thus, 
+$$
+\boxed{
 g_{ij}
 =
 \begin{pmatrix}
 R^2&0\\
 0&R^2\cos^2\phi
 \end{pmatrix}
-}$$ and $$\boxed{
-ds^2=R^2d\phi^2+R^2\cos^2\phi\,d\lambda^2.
-}$$
+}
+$$ 
+
+and 
+
+$$
+\boxed{
+ds^2=R^2d\phi^2+R^2\cos^2\phi\,d\lambda^2
+}
+$$
 
 This corresponds to the SymPy construction
 
@@ -95,18 +103,25 @@ This corresponds to the SymPy construction
           * TensorProduct(dlam, dlam)
     )
 
-The inverse metric is $$\boxed{
+The inverse metric is 
+
+$$
+\boxed{
 g^{ij}
 =
 \begin{pmatrix}
 \dfrac{1}{R^2}&0\\[6pt]
 0&\dfrac{1}{R^2\cos^2\phi}
-\end{pmatrix}.
-}$$
+\end{pmatrix}
+}
+$$
 
 # Christoffel Symbols
 
-The Christoffel symbols of the second kind are $$\boxed{
+The Christoffel symbols of the second kind are 
+
+$$
+\boxed{
 \Gamma^k_{ij}
 =
 \frac12g^{k\ell}
@@ -114,24 +129,44 @@ The Christoffel symbols of the second kind are $$\boxed{
 \partial_i g_{j\ell}
 +\partial_j g_{i\ell}
 -\partial_\ell g_{ij}
-\right).
-}$$
+\right)
+}
+$$
 
 Only one metric component depends on the coordinates:
-$$g_{\lambda\lambda}=R^2\cos^2\phi.$$ Therefore,
+$$
+g_{\lambda\lambda}=R^2\cos^2\phi
+$$ 
 
+Therefore,
 $$
 \partial_\phi g_{\lambda\lambda}
-=-2R^2\sin\phi\cos\phi,$$ and all other metric derivatives vanish.
+=-2R^2\sin\phi\cos\phi
+$$ 
+
+and all other metric derivatives vanish.
 
 ## Calculation of $\Gamma^\phi_{\lambda\lambda}$
 
 Set $k=\phi$ and $i=j=\lambda$. Since the metric is diagonal, only
-$\ell=\phi$ contributes: $$\Gamma^\phi_{\lambda\lambda}
-=-\frac12g^{\phi\phi}\partial_\phi g_{\lambda\lambda}.$$ Substitution
-gives $$\Gamma^\phi_{\lambda\lambda}
+$\ell=\phi$ contributes: 
+
+$$
+\Gamma^\phi_{\lambda\lambda}
+=-\frac12g^{\phi\phi}\partial_\phi g_{\lambda\lambda}
+$$ 
+
+Substitution gives 
+$$
+\Gamma^\phi_{\lambda\lambda}
 =-\frac12\frac1{R^2}
-\left(-2R^2\sin\phi\cos\phi\right),$$ so $$\boxed{
+\left(-2R^2\sin\phi\cos\phi\right)
+$$ 
+
+so 
+
+$$
+\boxed{
 \Gamma^\phi_{\lambda\lambda}
 =\sin\phi\cos\phi
 =\frac12\sin(2\phi).
@@ -140,28 +175,44 @@ $$
 
 ## Calculation of $\Gamma^\lambda_{\phi\lambda}$
 
-Only $\ell=\lambda$ contributes: $$\Gamma^\lambda_{\phi\lambda}
-=\frac12g^{\lambda\lambda}\partial_\phi g_{\lambda\lambda}.$$ Therefore,
+Only $\ell=\lambda$ contributes: 
+$$
+\Gamma^\lambda_{\phi\lambda}
+=\frac12g^{\lambda\lambda}\partial_\phi g_{\lambda\lambda}
+$$ 
 
+Therefore,
 $$
 \Gamma^\lambda_{\phi\lambda}
 =\frac12\frac{1}{R^2\cos^2\phi}
-\left(-2R^2\sin\phi\cos\phi\right),$$ which gives $$\boxed{
-\Gamma^\lambda_{\phi\lambda}=-\tan\phi.
-}$$ By symmetry of the Levi--Civita connection, $$\boxed{
+\left(-2R^2\sin\phi\cos\phi\right)
+$$ 
+
+which gives 
+$$
+\boxed{
+\Gamma^\lambda_{\phi\lambda}=-\tan\phi
+}
+$$ 
+
+By symmetry of the Levi--Civita connection, 
+$$\boxed{
 \Gamma^\lambda_{\lambda\phi}
 =\Gamma^\lambda_{\phi\lambda}
-=-\tan\phi.
+=-\tan\phi
 }
 $$
 
-Thus, the only nonzero Christoffel symbols are $$\boxed{
+Thus, the only nonzero Christoffel symbols are 
+$$
+\boxed{
 \Gamma^\phi_{\lambda\lambda}=\sin\phi\cos\phi,
 \qquad
 \Gamma^\lambda_{\phi\lambda}
 =\Gamma^\lambda_{\lambda\phi}
-=-\tan\phi.
-}$$
+=-\tan\phi
+}
+$$
 
 In the code, SymPy obtains them from
 
@@ -169,13 +220,22 @@ In the code, SymPy obtains them from
 
 # Tensor Geodesic Equation
 
-A geodesic satisfies $$\boxed{
+A geodesic satisfies 
+$$
+\boxed{
 \frac{d^2x^k}{dt^2}
 +\Gamma^k_{ij}
 \frac{dx^i}{dt}
-\frac{dx^j}{dt}=0.
-}$$ Equivalently, $$\boxed{\nabla_{\dot\gamma}\dot\gamma=0.}$$ Here,
+\frac{dx^j}{dt}=0
+}
+$$ 
 
+Equivalently, 
+$$
+\boxed{\nabla_{\dot\gamma}\dot\gamma=0}
+$$ 
+
+Here,
 $$
 \gamma(t)=
 \begin{pmatrix}
@@ -183,43 +243,85 @@ $$
 \lambda(t)
 \end{pmatrix},
 \qquad
-\dot\gamma=\dot\phi\,\mathbf e_\phi+\dot\lambda\,\mathbf e_\lambda.
+\dot\gamma=\dot\phi\,\mathbf e_\phi+\dot\lambda\,\mathbf e_\lambda
 $$
 
 ## Latitude Equation
 
-For $k=\phi$, the fully expanded equation is $$\ddot\phi
+For $k=\phi$, the fully expanded equation is 
+$$
+\ddot\phi
 +\Gamma^\phi_{\phi\phi}\dot\phi^2
 +\Gamma^\phi_{\phi\lambda}\dot\phi\dot\lambda
 +\Gamma^\phi_{\lambda\phi}\dot\lambda\dot\phi
 +\Gamma^\phi_{\lambda\lambda}\dot\lambda^2
-=0.$$ The first three Christoffel symbols vanish, so $$\ddot\phi
-+\Gamma^\phi_{\lambda\lambda}\dot\lambda^2=0.$$ Hence, $$\boxed{
+=0
+$$ 
+
+The first three Christoffel symbols vanish, so 
+$$
+\ddot\phi
++\Gamma^\phi_{\lambda\lambda}\dot\lambda^2=0
+$$ 
+
+Hence, 
+
+$$
+\boxed{
 \ddot\phi+\sin\phi\cos\phi\,\dot\lambda^2=0
-}$$ or $$\boxed{
-\ddot\phi=-\sin\phi\cos\phi\,\dot\lambda^2.
-}$$ This corresponds to
+}
+$$ 
+
+or 
+
+$$
+\boxed{
+\ddot\phi=-\sin\phi\cos\phi\,\dot\lambda^2
+}
+$$ 
+
+This corresponds to
 
     dy[2] = -gamma_phi_ll * lam_dot**2
 
 ## Longitude Equation
 
-For $k=\lambda$, $$\begin{aligned}
+For $k=\lambda$, 
+
+$$
+\begin{aligned}
 \ddot\lambda
 &+\Gamma^\lambda_{\phi\phi}\dot\phi^2
 +\Gamma^\lambda_{\phi\lambda}\dot\phi\dot\lambda\\
 &+\Gamma^\lambda_{\lambda\phi}\dot\lambda\dot\phi
-+\Gamma^\lambda_{\lambda\lambda}\dot\lambda^2=0.
-\end{aligned}$$ The only nonzero terms are the two mixed terms. Thus,
++\Gamma^\lambda_{\lambda\lambda}\dot\lambda^2=0
+\end{aligned}
+$$ 
+
+The only nonzero terms are the two mixed terms. Thus,
 
 $$
 \ddot\lambda
 -\tan\phi\,\dot\phi\dot\lambda
--\tan\phi\,\dot\lambda\dot\phi=0,$$ so $$\boxed{
+-\tan\phi\,\dot\lambda\dot\phi=0
+$$ 
+
+so 
+
+$$
+\boxed{
 \ddot\lambda-2\tan\phi\,\dot\phi\dot\lambda=0
-}$$ or $$\boxed{
-\ddot\lambda=2\tan\phi\,\dot\phi\dot\lambda.
-}$$ This corresponds to
+}
+$$ 
+
+or 
+
+$$\boxed{
+\ddot\lambda=2\tan\phi\,\dot\phi\dot\lambda
+}
+$$ 
+
+This corresponds to
 
     dy[3] = -2.0 * gamma_lam_pl * phi_dot * lam_dot
 
@@ -227,35 +329,58 @@ because $\Gamma^\lambda_{\phi\lambda}=-\tan\phi$.
 
 # First-Order System Used by the Numerical Solver
 
-Introduce $$y_1=\phi,\qquad y_2=\lambda,\qquad
-y_3=\dot\phi,\qquad y_4=\dot\lambda.$$ Then the second-order tensor
-equations become $$\boxed{
+Introduce 
+$$
+y_1=\phi,\qquad y_2=\lambda,\qquad
+y_3=\dot\phi,\qquad y_4=\dot\lambda
+$$ 
+
+Then the second-order tensor equations become 
+
+$$
+\boxed{
 \begin{aligned}
-\dot y_1&=y_3,\\
-\dot y_2&=y_4,\\
-\dot y_3&=-\sin y_1\cos y_1\,y_4^2,\\
-\dot y_4&=2\tan y_1\,y_3y_4.
+\dot y_1&=y_3\\
+\dot y_2&=y_4\\
+\dot y_3&=-\sin y_1\cos y_1\,y_4^2\\
+\dot y_4&=2\tan y_1\,y_3y_4
 \end{aligned}
-}$$ This is the system passed to `scipy.integrate.solve_bvp`.
+}
+$$ 
+
+This is the system passed to `scipy.integrate.solve_bvp`.
 
 # Los Angeles-to-Tokyo Boundary-Value Problem
 
-Using city-center coordinates, $$\begin{aligned}
+Using city-center coordinates, 
+$$
+\begin{aligned}
 \phi_{\mathrm{LA}}&=34.0522^\circ,
 &\lambda_{\mathrm{LA}}&=-118.2437^\circ,\\
 \phi_{\mathrm{Tokyo}}&=35.6895^\circ,
-&\lambda_{\mathrm{Tokyo}}&=139.6917^\circ.
-\end{aligned}$$ For a continuous Pacific-going coordinate branch,
-Tokyo's longitude is unwrapped as
-$$139.6917^\circ\equiv -220.3083^\circ.$$ The boundary conditions are
-$$\boxed{
-\begin{aligned}
-\phi(0)&=\phi_{\mathrm{LA}},\\
-\lambda(0)&=\lambda_{\mathrm{LA}},\\
-\phi(1)&=\phi_{\mathrm{Tokyo}},\\
-\lambda(1)&=\lambda_{\mathrm{Tokyo}}.
+&\lambda_{\mathrm{Tokyo}}&=139.6917^\circ
 \end{aligned}
-}$$ The corresponding code is
+$$ 
+
+For a continuous Pacific-going coordinate branch, Tokyo's longitude is unwrapped (subtract $360^\circ$ from Tokyo's longitude) as
+$$
+139.6917^\circ\equiv -220.3083^\circ
+$$ 
+
+The boundary conditions are
+
+$$
+\boxed{
+\begin{aligned}
+\phi(0)&=\phi_{\mathrm{LA}}\\
+\lambda(0)&=\lambda_{\mathrm{LA}}\\
+\phi(1)&=\phi_{\mathrm{Tokyo}}\\
+\lambda(1)&=\lambda_{\mathrm{Tokyo}}
+\end{aligned}
+}
+$$ 
+
+The corresponding code is
 
     return np.array([
         ya[0] - phi_A,
@@ -271,15 +396,31 @@ beginning in Los Angeles reaches Tokyo.
 # Distance Recovered from the Metric
 
 Once $\phi(t)$ and $\lambda(t)$ are known,
-$$ds^2=R^2d\phi^2+R^2\cos^2\phi\,d\lambda^2.$$ Dividing by $dt^2$ gives
-$$\left(\frac{ds}{dt}\right)^2
-=R^2\left(\dot\phi^2+\cos^2\phi\,\dot\lambda^2\right).$$ Thus, $$\boxed{
+$$
+ds^2=R^2d\phi^2+R^2\cos^2\phi\,d\lambda^2
+$$ 
+
+Dividing by $dt^2$ gives
+$$
+\left(\frac{ds}{dt}\right)^2
+=R^2\left(\dot\phi^2+\cos^2\phi\,\dot\lambda^2\right)
+$$ 
+
+Thus, 
+$$
+\boxed{
 \frac{ds}{dt}
 =R\sqrt{\dot\phi^2+\cos^2\phi\,\dot\lambda^2}
-}$$ and the total length is $$\boxed{
+}
+$$ 
+and the total length is 
+$$
+\boxed{
 L=R\int_0^1
-\sqrt{\dot\phi^2+\cos^2\phi\,\dot\lambda^2}\,dt.
-}$$ The implementation is
+\sqrt{\dot\phi^2+\cos^2\phi\,\dot\lambda^2}\,dt
+}
+$$ 
+The implementation is
 
     metric_speed = R_KM * np.sqrt(
         phi_dot**2
@@ -288,32 +429,75 @@ L=R\int_0^1
 
     distance_km = np.trapz(metric_speed, tau_plot)
 
-For the numerical solution, $$\boxed{L\approx8815.473\ \mathrm{km}.}$$
+For the numerical solution, 
+$$
+\boxed{L\approx8815.473\ \mathrm{km}}
+$$
+
 The path reaches a maximum latitude of approximately
-$$\boxed{47.952^\circ\ \mathrm{N}.}$$
+$$
+\boxed{47.952^\circ\ \mathrm{N}}
+$$
 
 # Calculation Chain
 
-The complete tensor-based calculation is $$\mathbf r(\phi,\lambda)
+The complete tensor-based calculation is 
+$$
+\mathbf r(\phi,\lambda)
 \quad\Longrightarrow\quad
 g_{ij}
 \quad\Longrightarrow\quad
 \Gamma^k_{ij}
 \quad\Longrightarrow\quad
-\nabla_{\dot\gamma}\dot\gamma=0$$ $$\Longrightarrow\quad
+\nabla_{\dot\gamma}\dot\gamma=0
+$$ 
+
+$$
+\Longrightarrow\quad
 \begin{cases}
-\ddot\phi+\sin\phi\cos\phi\,\dot\lambda^2=0,\\
-\ddot\lambda-2\tan\phi\,\dot\phi\dot\lambda=0,
-\end{cases}$$ $$\Longrightarrow\quad
+\ddot\phi+\sin\phi\cos\phi\,\dot\lambda^2=0\\
+\ddot\lambda-2\tan\phi\,\dot\phi\dot\lambda=0
+\end{cases}
+$$ 
+
+$$
+\Longrightarrow\quad
 \text{solve the Los Angeles-to-Tokyo boundary conditions}
 \quad\Longrightarrow\quad
-L\approx8815.473\ \mathrm{km}.
+L\approx8815.473\ \mathrm{km}
 $$
 
 This demonstrates that the route is obtained from the metric tensor and
 its Levi--Civita connection rather than by directly inserting the known
 great-circle distance formula $L=R\theta$.
 
+# Results
+
+<!-- Row 1 -->
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/sympy_geodesic_earth_globe.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+Geodesic on earth globe.
+</div>
+
+<!-- Row 2 -->
+<div class="row mt-4"> <!-- Added mt-4 for a bit of spacing between rows -->
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/sympy_geodesic_earth_flat.png" title="second example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+Geodesic on flattened earth.
+</div>
+
+# References
+
+To be added.
+
+<!-- 
 The Python code to implement the above:
 
 ```
@@ -543,3 +727,4 @@ print("Wrote interactive_tensor_geodesic_globe.html")
 print("Wrote interactive_tensor_geodesic_flat.html")
 
 ```
+ -->
