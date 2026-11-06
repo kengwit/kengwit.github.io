@@ -535,9 +535,6 @@ Geodesic on earth globe.
 Geodesic on flattened earth.
 </div>
 
-# References
-
-{% bibliography --cited %}
 
 <!-- 
 The Python code to implement the above:
