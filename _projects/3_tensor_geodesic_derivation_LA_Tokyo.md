@@ -22,8 +22,12 @@ Angeles to Tokyo.
 
 # Coordinate System
 
-Use $$x^1=\phi,\qquad x^2=\lambda,$$ where $\phi$ is latitude and
-$\lambda$ is longitude. A sphere of radius $R$ is parametrized by
+Use 
+$$
+x^1=\phi,\qquad x^2=\lambda
+$$ 
+
+where $\phi$ is latitude and $\lambda$ is longitude. A sphere of radius $R$ is parametrized by
 
 $$
 \mathbf r(\phi,\lambda)
@@ -46,11 +50,11 @@ R\begin{pmatrix}
 \cos\phi
 \end{pmatrix}
 $$ 
+
 and 
 
-$$\mathbf e_\lambda
-=
-\frac{\partial\mathbf r}{\partial\lambda}
+$$
+\mathbf e_\lambda = \frac{\partial\mathbf r}{\partial\lambda}
 =
 R\begin{pmatrix}
 -\cos\phi\sin\lambda\\
