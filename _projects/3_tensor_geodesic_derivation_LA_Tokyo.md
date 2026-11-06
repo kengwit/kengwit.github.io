@@ -537,7 +537,7 @@ Geodesic on flattened earth.
 
 # References
 
-To be added.
+{% bibliography --cited %}
 
 <!-- 
 The Python code to implement the above:
