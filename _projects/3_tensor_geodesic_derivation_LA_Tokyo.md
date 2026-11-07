@@ -38,7 +38,7 @@ $$
 The coordinate basis vectors are 
 
 $$
-\mathbf e_\phi = \frac{\partial\mathbf r}{\partial\phi}
+\mathbf e\_\phi = \frac{\partial\mathbf r}{\partial\phi}
 =
 R\begin{pmatrix}
 -\sin\phi\cos\lambda\\
@@ -762,6 +762,7 @@ print("Wrote interactive_tensor_geodesic_flat.html")
 
 ```
  -->
+
 ---
 
 # Appendix: Position Vector, Coordinate Curve, and the Changing Basis
