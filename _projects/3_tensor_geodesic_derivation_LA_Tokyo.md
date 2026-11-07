@@ -38,7 +38,7 @@ $$
 The coordinate basis vectors are 
 
 $$
-\mathbf e\_\phi = \frac{\partial\mathbf r}{\partial\phi}
+\mathbf e_\phi = \frac{\partial\mathbf r}{\partial\phi}
 =
 R\begin{pmatrix}
 -\sin\phi\cos\lambda\\
@@ -780,7 +780,7 @@ The following objects should not be identified with one another.
 A point on the coordinate patch is represented by
 
 $$
-x=(\phi,\lambda).
+x=(\phi,\lambda)
 $$
 
 This is a pair of coordinate values, not a vector in physical three-dimensional space.
@@ -790,13 +790,13 @@ This is a pair of coordinate values, not a vector in physical three-dimensional 
 A parametrized curve is a map
 
 $$
-\gamma:I\subset\mathbb R\longrightarrow S^2,
+\gamma:I\subset\mathbb R\longrightarrow S^2
 $$
 
 which has the coordinate representation
 
 $$
-\boxed{\gamma(t)=\bigl(\phi(t),\lambda(t)\bigr).}
+\boxed{\gamma(t)=\bigl(\phi(t),\lambda(t)\bigr)}
 $$
 
 Thus, $\gamma(t)$ identifies a point of the sphere at parameter value $t$. The displayed column $\bigl(\phi(t),\lambda(t)\bigr)^T$ contains coordinate functions. It is not the Cartesian position vector of that point.
@@ -806,7 +806,7 @@ Thus, $\gamma(t)$ identifies a point of the sphere at parameter value $t$. The d
 For a sphere of radius $R$, the embedding into $\mathbb R^3$ is
 
 $$
-\mathbf r:S^2\longrightarrow\mathbb R^3,
+\mathbf r:S^2\longrightarrow\mathbb R^3
 $$
 
 with coordinate expression
@@ -818,7 +818,7 @@ $$
 \cos\phi\cos\lambda\\
 \cos\phi\sin\lambda\\
 \sin\phi
-\end{pmatrix}.
+\end{pmatrix}
 }
 $$
 
@@ -827,7 +827,7 @@ The physical path in ambient space is the composition
 $$
 \boxed{
 \mathbf c(t)=(\mathbf r\circ\gamma)(t)
-=\mathbf r\bigl(\phi(t),\lambda(t)\bigr).
+=\mathbf r\bigl(\phi(t),\lambda(t)\bigr)
 }
 $$
 
@@ -848,7 +848,7 @@ The coordinate tangent basis is
 $$
 \mathbf e_\phi=\frac{\partial\mathbf r}{\partial\phi},
 \qquad
-\mathbf e_\lambda=\frac{\partial\mathbf r}{\partial\lambda}.
+\mathbf e_\lambda=\frac{\partial\mathbf r}{\partial\lambda}
 $$
 
 Explicitly,
@@ -859,7 +859,7 @@ $$
 -\sin\phi\cos\lambda\\
 -\sin\phi\sin\lambda\\
 \cos\phi
-\end{pmatrix},
+\end{pmatrix}
 $$
 
 and
@@ -870,7 +870,7 @@ $$
 -\cos\phi\sin\lambda\\
 \cos\phi\cos\lambda\\
 0
-\end{pmatrix}.
+\end{pmatrix}
 $$
 
 These basis vectors vary with $\phi$ and $\lambda$. Along the curve,
@@ -878,7 +878,7 @@ These basis vectors vary with $\phi$ and $\lambda$. Along the curve,
 $$
 \mathbf e_\phi(t)=\mathbf e_\phi\bigl(\phi(t),\lambda(t)\bigr),
 \qquad
-\mathbf e_\lambda(t)=\mathbf e_\lambda\bigl(\phi(t),\lambda(t)\bigr).
+\mathbf e_\lambda(t)=\mathbf e_\lambda\bigl(\phi(t),\lambda(t)\bigr)
 $$
 
 Consequently, it would be incorrect to claim that the basis vectors are constant along a general curve. The precise statement is:
@@ -905,7 +905,7 @@ The right-hand side would be a tangent vector, whereas $\gamma(t)$ is a point. T
 
 $$
 \frac{d}{dt}\bigl(\phi(t),\lambda(t)\bigr)
-=\bigl(\dot\phi(t),\dot\lambda(t)\bigr).
+=\bigl(\dot\phi(t),\dot\lambda(t)\bigr)
 $$
 
 These are the components of the tangent vector in the coordinate basis:
@@ -914,7 +914,7 @@ $$
 \boxed{
 \dot\gamma
 =\dot\phi\frac{\partial}{\partial\phi}
-+\dot\lambda\frac{\partial}{\partial\lambda}.
++\dot\lambda\frac{\partial}{\partial\lambda}
 }
 $$
 
@@ -924,7 +924,7 @@ $$
 \boxed{
 \dot{\mathbf c}
 =\frac{d}{dt}\mathbf r\bigl(\phi(t),\lambda(t)\bigr)
-=\dot\phi\mathbf e_\phi+\dot\lambda\mathbf e_\lambda.
+=\dot\phi\mathbf e_\phi+\dot\lambda\mathbf e_\lambda
 }
 $$
 
@@ -933,7 +933,7 @@ This is the multivariable chain rule:
 $$
 \frac{d\mathbf c}{dt}
 =\frac{\partial\mathbf r}{\partial\phi}\frac{d\phi}{dt}
-+\frac{\partial\mathbf r}{\partial\lambda}\frac{d\lambda}{dt}.
++\frac{\partial\mathbf r}{\partial\lambda}\frac{d\lambda}{dt}
 $$
 
 At this first derivative, $\mathbf e_\phi$ and $\mathbf e_\lambda$ arise as the partial derivatives of $\mathbf r$. No derivative of those basis vectors is required yet.
@@ -949,7 +949,7 @@ $$
 means that $\phi(t)$ and $\lambda(t)$ are the coordinate functions of the point $\gamma(t)$ in the chosen chart. Differentiating them gives the rate at which the point moves through coordinate space:
 
 $$
-\dot x^i(t)=\bigl(\dot\phi(t),\dot\lambda(t)\bigr).
+\dot x^i(t)=\bigl(\dot\phi(t),\dot\lambda(t)\bigr)
 $$
 
 These numbers are the components of the tangent vector at the current point. They do not imply that the physical tangent basis is held fixed. The basis at time $t$ is
@@ -958,7 +958,7 @@ $$
 \left\{
 \mathbf e_\phi\bigl(\gamma(t)\bigr),
 \mathbf e_\lambda\bigl(\gamma(t)\bigr)
-\right\},
+\right\}
 $$
 
 and generally
@@ -966,7 +966,7 @@ and generally
 $$
 \frac{d\mathbf e_\phi}{dt}\ne0,
 \qquad
-\frac{d\mathbf e_\lambda}{dt}\ne0.
+\frac{d\mathbf e_\lambda}{dt}\ne0
 $$
 
 It is useful to distinguish two operations:
@@ -974,7 +974,7 @@ It is useful to distinguish two operations:
 1. Differentiating the coordinate map gives the component pair
 
    $$
-   \frac{d}{dt}(\phi,\lambda)=(\dot\phi,\dot\lambda).
+   \frac{d}{dt}(\phi,\lambda)=(\dot\phi,\dot\lambda)
    $$
 
 2. Interpreting that component pair geometrically gives the tangent vector in the basis attached to the current point:
@@ -982,13 +982,13 @@ It is useful to distinguish two operations:
    $$
    \dot\gamma
    =\dot\phi\mathbf e_\phi\bigl(\gamma(t)\bigr)
-   +\dot\lambda\mathbf e_\lambda\bigl(\gamma(t)\bigr).
+   +\dot\lambda\mathbf e_\lambda\bigl(\gamma(t)\bigr)
    $$
 
 Thus, the basis is not kept constant. At each time, one uses the basis belonging to a different tangent space:
 
 $$
-\dot\gamma(t)\in T_{\gamma(t)}S^2.
+\dot\gamma(t)\in T_{\gamma(t)}S^2
 $$
 
 This also explains why ordinary subtraction of tangent vectors at different points is not intrinsically meaningful without a rule for comparing their tangent spaces. The connection supplies that rule.
@@ -998,7 +998,7 @@ This also explains why ordinary subtraction of tangent vectors at different poin
 Differentiate the velocity
 
 $$
-\dot{\mathbf c}=\dot\phi\mathbf e_\phi+\dot\lambda\mathbf e_\lambda.
+\dot{\mathbf c}=\dot\phi\mathbf e_\phi+\dot\lambda\mathbf e_\lambda
 $$
 
 The product rule gives
@@ -1007,9 +1007,8 @@ $$
 \begin{aligned}
 \ddot{\mathbf c}
 ={}&\ddot\phi\mathbf e_\phi
-+\ddot\lambda\mathbf e_\lambda\\
-&+\dot\phi\frac{d\mathbf e_\phi}{dt}
-+\dot\lambda\frac{d\mathbf e_\lambda}{dt}.
++\ddot\lambda\mathbf e_\lambda +\dot\phi\frac{d\mathbf e_\phi}{dt}
++\dot\lambda\frac{d\mathbf e_\lambda}{dt}
 \end{aligned}
 $$
 
@@ -1019,7 +1018,7 @@ $$
 \frac{d\mathbf e_i}{dt}
 =\frac{\partial\mathbf e_i}{\partial x^j}\dot x^j,
 \qquad
-(x^1,x^2)=(\phi,\lambda).
+(x^1,x^2)=(\phi,\lambda)
 $$
 
 Hence,
@@ -1029,7 +1028,7 @@ $$
 \ddot{\mathbf c}
 =\ddot x^k\mathbf e_k
 +\dot x^i\dot x^j
-\frac{\partial\mathbf e_i}{\partial x^j}.
+\frac{\partial\mathbf e_i}{\partial x^j}
 }
 $$
 
@@ -1042,7 +1041,7 @@ Because the sphere is embedded in $\mathbb R^3$, the derivative of a tangent bas
 $$
 \boxed{
 \frac{\partial\mathbf e_i}{\partial x^j}
-=\Gamma^k{}_{ij}\mathbf e_k+b_{ij}\mathbf n.
+=\Gamma^k{}_{ij}\mathbf e_k+b_{ij}\mathbf n
 }
 $$
 
@@ -1066,7 +1065,7 @@ Therefore, the tangential projection is
 $$
 \boxed{
 (\ddot{\mathbf c})_{\mathrm{tan}}
-=\left(\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j\right)\mathbf e_k.
+=\left(\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j\right)\mathbf e_k
 }
 $$
 
@@ -1076,7 +1075,7 @@ $$
 \boxed{
 \nabla_{\dot\gamma}\dot\gamma
 =\left(\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j\right)
-\frac{\partial}{\partial x^k}.
+\frac{\partial}{\partial x^k}
 }
 $$
 
@@ -1088,7 +1087,7 @@ $$
 =
 \text{component change}
 +
-\text{change caused by the moving basis}.
+\text{change caused by the moving basis}
 }
 $$
 
@@ -1099,14 +1098,14 @@ The term $\ddot x^k$ differentiates the coordinate components as ordinary scalar
 A geodesic has zero tangential acceleration:
 
 $$
-\boxed{\nabla_{\dot\gamma}\dot\gamma=0.}
+\boxed{\nabla_{\dot\gamma}\dot\gamma=0}
 $$
 
 In coordinates,
 
 $$
 \boxed{
-\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j=0.
+\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j=0
 }
 $$
 
@@ -1118,14 +1117,14 @@ $$
 \Gamma^\phi{}_{\lambda\lambda}=\sin\phi\cos\phi,
 \qquad
 \Gamma^\lambda{}_{\phi\lambda}
-=\Gamma^\lambda{}_{\lambda\phi}=-\tan\phi.
+=\Gamma^\lambda{}_{\lambda\phi}=-\tan\phi
 $$
 
 Therefore,
 
 $$
 \boxed{
-\ddot\phi+\sin\phi\cos\phi\dot\lambda^2=0,
+\ddot\phi+\sin\phi\cos\phi\dot\lambda^2=0
 }
 $$
 
@@ -1133,7 +1132,7 @@ and
 
 $$
 \boxed{
-\ddot\lambda-2\tan\phi\dot\phi\dot\lambda=0.
+\ddot\lambda-2\tan\phi\dot\phi\dot\lambda=0
 }
 $$
 
@@ -1146,13 +1145,13 @@ In flat Euclidean space with a global Cartesian basis,
 $$
 \frac{d\mathbf e_i}{dt}=0
 \quad\Longrightarrow\quad
-\Gamma^k{}_{ij}=0.
+\Gamma^k{}_{ij}=0
 $$
 
 The geodesic equation then reduces to
 
 $$
-\ddot x^k=0,
+\ddot x^k=0
 $$
 
 which is the ordinary straight-line equation. In spherical coordinates, the basis changes from point to point, so the Christoffel symbols are generally nonzero. The resulting extra terms are the coordinate expression of going straight while using a moving, non-Cartesian basis.
@@ -1162,7 +1161,7 @@ which is the ordinary straight-line equation. In spherical coordinates, the basi
 For a general tangent vector field
 
 $$
-V(t)=V^i(t)\mathbf e_i\bigl(\gamma(t)\bigr),
+V(t)=V^i(t)\mathbf e_i\bigl(\gamma(t)\bigr)
 $$
 
 its ordinary ambient derivative is
@@ -1170,7 +1169,7 @@ its ordinary ambient derivative is
 $$
 \frac{dV}{dt}
 =\dot V^k\mathbf e_k
-+V^i\dot x^j\frac{\partial\mathbf e_i}{\partial x^j}.
++V^i\dot x^j\frac{\partial\mathbf e_i}{\partial x^j}
 $$
 
 Taking the tangential part gives
@@ -1178,14 +1177,14 @@ Taking the tangential part gives
 $$
 \boxed{
 \nabla_{\dot\gamma}V
-=\left(\dot V^k+\Gamma^k{}_{ij}\dot x^iV^j\right)\mathbf e_k.
+=\left(\dot V^k+\Gamma^k{}_{ij}\dot x^iV^j\right)\mathbf e_k
 }
 $$
 
 For parallel transport,
 
 $$
-\boxed{\nabla_{\dot\gamma}V=0.}
+\boxed{\nabla_{\dot\gamma}V=0}
 $$
 
 Thus, a vector can have changing coordinate or Cartesian components while having zero intrinsic tangential change.
@@ -1205,7 +1204,7 @@ The key point is
 
 $$
 \boxed{
-\gamma(t)\ne\phi(t)\mathbf e_\phi+\lambda(t)\mathbf e_\lambda.
+\gamma(t)\ne\phi(t)\mathbf e_\phi+\lambda(t)\mathbf e_\lambda
 }
 $$
 
