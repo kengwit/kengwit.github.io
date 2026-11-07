@@ -38,7 +38,7 @@ $$
 The coordinate basis vectors are 
 
 $$
-\mathbf e\_\phi = \frac{\partial\mathbf r}{\partial\phi}
+\mathbf e_\phi = \frac{\partial\mathbf r}{\partial\phi}
 =
 R\begin{pmatrix}
 -\sin\phi\cos\lambda\\
@@ -762,3 +762,450 @@ print("Wrote interactive_tensor_geodesic_flat.html")
 
 ```
  -->
+---
+
+# Appendix: Position Vector, Coordinate Curve, and the Changing Basis
+
+## Purpose
+
+This appendix clarifies the distinction between the coordinate curve $\gamma(t)$ and the ambient position vector $\mathbf r(\phi,\lambda)$. It also explains why no derivative of the coordinate basis appears when one first differentiates $\gamma(t)$, even though the basis vectors vary from point to point. The basis variation appears when the tangent vector is differentiated, and intrinsically it is represented by the connection coefficients $\Gamma^k{}_{ij}$.
+
+## Three Different Objects
+
+The following objects should not be identified with one another.
+
+### The coordinate tuple
+
+A point on the coordinate patch is represented by
+
+$$
+x=(\phi,\lambda).
+$$
+
+This is a pair of coordinate values, not a vector in physical three-dimensional space.
+
+### The curve on the manifold
+
+A parametrized curve is a map
+
+$$
+\gamma:I\subset\mathbb R\longrightarrow S^2,
+$$
+
+which has the coordinate representation
+
+$$
+\boxed{\gamma(t)=\bigl(\phi(t),\lambda(t)\bigr).}
+$$
+
+Thus, $\gamma(t)$ identifies a point of the sphere at parameter value $t$. The displayed column $\bigl(\phi(t),\lambda(t)\bigr)^T$ contains coordinate functions. It is not the Cartesian position vector of that point.
+
+### The embedding or position map
+
+For a sphere of radius $R$, the embedding into $\mathbb R^3$ is
+
+$$
+\mathbf r:S^2\longrightarrow\mathbb R^3,
+$$
+
+with coordinate expression
+
+$$
+\boxed{
+\mathbf r(\phi,\lambda)
+=R\begin{pmatrix}
+\cos\phi\cos\lambda\\
+\cos\phi\sin\lambda\\
+\sin\phi
+\end{pmatrix}.
+}
+$$
+
+The physical path in ambient space is the composition
+
+$$
+\boxed{
+\mathbf c(t)=(\mathbf r\circ\gamma)(t)
+=\mathbf r\bigl(\phi(t),\lambda(t)\bigr).
+}
+$$
+
+Here $\mathbf c(t)\in\mathbb R^3$ is an actual Cartesian position vector. Therefore,
+
+$$
+\gamma(t)=\bigl(\phi(t),\lambda(t)\bigr)
+\quad\text{and}\quad
+\mathbf c(t)=\mathbf r\bigl(\phi(t),\lambda(t)\bigr)
+$$
+
+describe the same moving point, but they belong to different spaces.
+
+## Coordinate Basis Vectors
+
+The coordinate tangent basis is
+
+$$
+\mathbf e_\phi=\frac{\partial\mathbf r}{\partial\phi},
+\qquad
+\mathbf e_\lambda=\frac{\partial\mathbf r}{\partial\lambda}.
+$$
+
+Explicitly,
+
+$$
+\mathbf e_\phi
+=R\begin{pmatrix}
+-\sin\phi\cos\lambda\\
+-\sin\phi\sin\lambda\\
+\cos\phi
+\end{pmatrix},
+$$
+
+and
+
+$$
+\mathbf e_\lambda
+=R\begin{pmatrix}
+-\cos\phi\sin\lambda\\
+\cos\phi\cos\lambda\\
+0
+\end{pmatrix}.
+$$
+
+These basis vectors vary with $\phi$ and $\lambda$. Along the curve,
+
+$$
+\mathbf e_\phi(t)=\mathbf e_\phi\bigl(\phi(t),\lambda(t)\bigr),
+\qquad
+\mathbf e_\lambda(t)=\mathbf e_\lambda\bigl(\phi(t),\lambda(t)\bigr).
+$$
+
+Consequently, it would be incorrect to claim that the basis vectors are constant along a general curve. The precise statement is:
+
+> When $\gamma(t)$ is differentiated once, the result is the tangent vector whose coordinate components are $\dot\phi$ and $\dot\lambda$. No product rule is being applied to a pre-existing basis expansion of $\gamma$.
+
+## Why No Basis Derivative Appears in $\dot\gamma$
+
+The expression
+
+$$
+\gamma(t)=\begin{pmatrix}\phi(t)\\\lambda(t)\end{pmatrix}
+$$
+
+is a coordinate description of a point. It is not the vector expansion
+
+$$
+\boxed{
+\gamma(t)\ne\phi(t)\mathbf e_\phi+\lambda(t)\mathbf e_\lambda.
+}
+$$
+
+The right-hand side would be a tangent vector, whereas $\gamma(t)$ is a point. Therefore, differentiating the coordinate tuple gives
+
+$$
+\frac{d}{dt}\bigl(\phi(t),\lambda(t)\bigr)
+=\bigl(\dot\phi(t),\dot\lambda(t)\bigr).
+$$
+
+These are the components of the tangent vector in the coordinate basis:
+
+$$
+\boxed{
+\dot\gamma
+=\dot\phi\frac{\partial}{\partial\phi}
++\dot\lambda\frac{\partial}{\partial\lambda}.
+}
+$$
+
+Equivalently, after applying the differential of the embedding $\mathbf r$, the ambient velocity is
+
+$$
+\boxed{
+\dot{\mathbf c}
+=\frac{d}{dt}\mathbf r\bigl(\phi(t),\lambda(t)\bigr)
+=\dot\phi\mathbf e_\phi+\dot\lambda\mathbf e_\lambda.
+}
+$$
+
+This is the multivariable chain rule:
+
+$$
+\frac{d\mathbf c}{dt}
+=\frac{\partial\mathbf r}{\partial\phi}\frac{d\phi}{dt}
++\frac{\partial\mathbf r}{\partial\lambda}\frac{d\lambda}{dt}.
+$$
+
+At this first derivative, $\mathbf e_\phi$ and $\mathbf e_\lambda$ arise as the partial derivatives of $\mathbf r$. No derivative of those basis vectors is required yet.
+
+## Coordinate Differentiation Does Not Freeze the Physical Basis
+
+The notation
+
+$$
+\gamma(t)=\bigl(\phi(t),\lambda(t)\bigr)
+$$
+
+means that $\phi(t)$ and $\lambda(t)$ are the coordinate functions of the point $\gamma(t)$ in the chosen chart. Differentiating them gives the rate at which the point moves through coordinate space:
+
+$$
+\dot x^i(t)=\bigl(\dot\phi(t),\dot\lambda(t)\bigr).
+$$
+
+These numbers are the components of the tangent vector at the current point. They do not imply that the physical tangent basis is held fixed. The basis at time $t$ is
+
+$$
+\left\{
+\mathbf e_\phi\bigl(\gamma(t)\bigr),
+\mathbf e_\lambda\bigl(\gamma(t)\bigr)
+\right\},
+$$
+
+and generally
+
+$$
+\frac{d\mathbf e_\phi}{dt}\ne0,
+\qquad
+\frac{d\mathbf e_\lambda}{dt}\ne0.
+$$
+
+It is useful to distinguish two operations:
+
+1. Differentiating the coordinate map gives the component pair
+
+   $$
+   \frac{d}{dt}(\phi,\lambda)=(\dot\phi,\dot\lambda).
+   $$
+
+2. Interpreting that component pair geometrically gives the tangent vector in the basis attached to the current point:
+
+   $$
+   \dot\gamma
+   =\dot\phi\mathbf e_\phi\bigl(\gamma(t)\bigr)
+   +\dot\lambda\mathbf e_\lambda\bigl(\gamma(t)\bigr).
+   $$
+
+Thus, the basis is not kept constant. At each time, one uses the basis belonging to a different tangent space:
+
+$$
+\dot\gamma(t)\in T_{\gamma(t)}S^2.
+$$
+
+This also explains why ordinary subtraction of tangent vectors at different points is not intrinsically meaningful without a rule for comparing their tangent spaces. The connection supplies that rule.
+
+## Where the Basis Derivatives Appear
+
+Differentiate the velocity
+
+$$
+\dot{\mathbf c}=\dot\phi\mathbf e_\phi+\dot\lambda\mathbf e_\lambda.
+$$
+
+The product rule gives
+
+$$
+\begin{aligned}
+\ddot{\mathbf c}
+={}&\ddot\phi\mathbf e_\phi
++\ddot\lambda\mathbf e_\lambda\\
+&+\dot\phi\frac{d\mathbf e_\phi}{dt}
++\dot\lambda\frac{d\mathbf e_\lambda}{dt}.
+\end{aligned}
+$$
+
+The chain rule for each basis vector gives
+
+$$
+\frac{d\mathbf e_i}{dt}
+=\frac{\partial\mathbf e_i}{\partial x^j}\dot x^j,
+\qquad
+(x^1,x^2)=(\phi,\lambda).
+$$
+
+Hence,
+
+$$
+\boxed{
+\ddot{\mathbf c}
+=\ddot x^k\mathbf e_k
++\dot x^i\dot x^j
+\frac{\partial\mathbf e_i}{\partial x^j}.
+}
+$$
+
+This is the stage at which the changing basis enters.
+
+## How the Christoffel Symbols Account for the Moving Basis
+
+Because the sphere is embedded in $\mathbb R^3$, the derivative of a tangent basis vector can have both tangential and normal components:
+
+$$
+\boxed{
+\frac{\partial\mathbf e_i}{\partial x^j}
+=\Gamma^k{}_{ij}\mathbf e_k+b_{ij}\mathbf n.
+}
+$$
+
+Here,
+
+- $\Gamma^k{}_{ij}\mathbf e_k$ is the tangential part,
+- $b_{ij}\mathbf n$ is the normal part,
+- $\mathbf n$ is the unit normal, and
+- $b_{ij}$ is the second fundamental form.
+
+Substitution into the ambient acceleration gives
+
+$$
+\ddot{\mathbf c}
+=\left(\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j\right)\mathbf e_k
++b_{ij}\dot x^i\dot x^j\mathbf n.
+$$
+
+Therefore, the tangential projection is
+
+$$
+\boxed{
+(\ddot{\mathbf c})_{\mathrm{tan}}
+=\left(\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j\right)\mathbf e_k.
+}
+$$
+
+The covariant acceleration is this tangential part:
+
+$$
+\boxed{
+\nabla_{\dot\gamma}\dot\gamma
+=\left(\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j\right)
+\frac{\partial}{\partial x^k}.
+}
+$$
+
+This formula can be read as
+
+$$
+\boxed{
+\text{covariant change}
+=
+\text{component change}
++
+\text{change caused by the moving basis}.
+}
+$$
+
+The term $\ddot x^k$ differentiates the coordinate components as ordinary scalar functions. The Christoffel term restores the effect of the changing basis. Thus, the Christoffel symbols do not assert that the basis is constant; they are precisely the quantities that account for the fact that it is not constant.
+
+## Geodesic Equation
+
+A geodesic has zero tangential acceleration:
+
+$$
+\boxed{\nabla_{\dot\gamma}\dot\gamma=0.}
+$$
+
+In coordinates,
+
+$$
+\boxed{
+\ddot x^k+\Gamma^k{}_{ij}\dot x^i\dot x^j=0.
+}
+$$
+
+This does not generally imply $\ddot{\mathbf c}=0$. Instead, it implies that $\ddot{\mathbf c}$ has no tangential component. For a geodesic on a sphere, the ambient acceleration is purely normal to the surface.
+
+For latitude-longitude coordinates, the nonzero Christoffel symbols are
+
+$$
+\Gamma^\phi{}_{\lambda\lambda}=\sin\phi\cos\phi,
+\qquad
+\Gamma^\lambda{}_{\phi\lambda}
+=\Gamma^\lambda{}_{\lambda\phi}=-\tan\phi.
+$$
+
+Therefore,
+
+$$
+\boxed{
+\ddot\phi+\sin\phi\cos\phi\dot\lambda^2=0,
+}
+$$
+
+and
+
+$$
+\boxed{
+\ddot\lambda-2\tan\phi\dot\phi\dot\lambda=0.
+}
+$$
+
+The additional terms are not artificial corrections. They are precisely the terms required because the coordinate basis changes along the path.
+
+## Consistency Check in Cartesian Coordinates
+
+In flat Euclidean space with a global Cartesian basis,
+
+$$
+\frac{d\mathbf e_i}{dt}=0
+\quad\Longrightarrow\quad
+\Gamma^k{}_{ij}=0.
+$$
+
+The geodesic equation then reduces to
+
+$$
+\ddot x^k=0,
+$$
+
+which is the ordinary straight-line equation. In spherical coordinates, the basis changes from point to point, so the Christoffel symbols are generally nonzero. The resulting extra terms are the coordinate expression of going straight while using a moving, non-Cartesian basis.
+
+## A General Vector Field Along the Curve
+
+For a general tangent vector field
+
+$$
+V(t)=V^i(t)\mathbf e_i\bigl(\gamma(t)\bigr),
+$$
+
+its ordinary ambient derivative is
+
+$$
+\frac{dV}{dt}
+=\dot V^k\mathbf e_k
++V^i\dot x^j\frac{\partial\mathbf e_i}{\partial x^j}.
+$$
+
+Taking the tangential part gives
+
+$$
+\boxed{
+\nabla_{\dot\gamma}V
+=\left(\dot V^k+\Gamma^k{}_{ij}\dot x^iV^j\right)\mathbf e_k.
+}
+$$
+
+For parallel transport,
+
+$$
+\boxed{\nabla_{\dot\gamma}V=0.}
+$$
+
+Thus, a vector can have changing coordinate or Cartesian components while having zero intrinsic tangential change.
+
+## Summary of the Distinction
+
+| Object | Meaning |
+|---|---|
+| $\gamma(t)$ | A point-valued curve on the manifold, represented by the coordinate pair $(\phi(t),\lambda(t))$. |
+| $\mathbf r(\phi,\lambda)$ | The embedding or position map from spherical coordinates into $\mathbb R^3$. |
+| $\mathbf c(t)=\mathbf r\circ\gamma$ | The Cartesian position vector of the moving point. |
+| $\dot\gamma$ | The abstract tangent vector with coordinate components $(\dot\phi,\dot\lambda)$. |
+| $\dot{\mathbf c}$ | The ambient representation $\dot\phi\mathbf e_\phi+\dot\lambda\mathbf e_\lambda$. |
+| $\Gamma^k{}_{ij}$ | The tangential part of the changing coordinate basis, used when differentiating tangent vectors. |
+
+The key point is
+
+$$
+\boxed{
+\gamma(t)\ne\phi(t)\mathbf e_\phi+\lambda(t)\mathbf e_\lambda.
+}
+$$
+
+Therefore, differentiating $\gamma(t)$ does not call for a product rule on basis vectors. The basis variation first appears when differentiating the tangent vector $\dot\gamma$, and the covariant derivative records that variation through the Christoffel symbols.
